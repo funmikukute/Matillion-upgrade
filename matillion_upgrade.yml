@@ -12,8 +12,8 @@
    
   - name: install a version of Matillion
     yum:
-      name: matillion-v1.56.10
-      state: present
+      name: matillion-*
+      state: latest
 
   - name: Start Matillion
     service:
