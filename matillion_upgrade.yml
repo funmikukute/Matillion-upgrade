@@ -13,8 +13,8 @@
   - name: install a version of Matillion
     yum:
       name: 
-        - matillion-emerald.noarch-1.56.10-1
-        - matillion-emerald-cdata.noarch-1.56.10-2
+        - matillion-emerald.noarch 1.56.10-1
+        - matillion-emerald-cdata.noarch 1.56.10-2
       state: present
 
   - name: Start Matillion
