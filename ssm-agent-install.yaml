@@ -1,0 +1,36 @@
+---
+- name: Install SSM on BigFix Servers
+  hosts: all
+  become: yes
+  user: ec2-user
+  tasks: 
+
+  - name: Install SSM Agent on Servers
+    dnf: 
+      name: 'https://s3.us-east-1.amazonaws.com/amazon-ssm-us-east-1/latest/linux_amd64/amazon-ssm-agent.rpm'
+      state: present 
+
+  - name: Start SSM Agent
+    service: 
+      name: amazon-ssm-agent
+      state: started
+
+  - name: Enable SSM Agent
+    service:
+      name: amazon-ssm-agent
+      state: enabled
+      
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
