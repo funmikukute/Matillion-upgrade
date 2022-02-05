@@ -3,7 +3,6 @@
   hosts: all
   become: yes
   user: centos
-  serial: 1
   tasks:
 
   - name: Stop Matillion
