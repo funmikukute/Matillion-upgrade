@@ -1,8 +1,11 @@
 ---
 - name: Matillion Upgrade 
-  hosts: all
+  hosts:
+    - 10.67.34.87
+    - 10.67.35.143
   become: yes
   user: centos
+  serial: 1
   tasks:
 
   - name: Stop Matillion
