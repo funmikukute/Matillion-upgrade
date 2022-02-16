@@ -3,12 +3,23 @@
   hosts: all
   become: yes
   user: ec2-user
-  tasks: 
+  tasks:
 
-  - name: Install SSM Agent on Servers
-    dnf: 
-      name: https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
-      state: present 
+  - name: download SSM Agent
+    get_url:
+      url: https://s3.us-east-1.amazonaws.com/amazon-ssm-us-east-1/latest/linux_arm64/amazon-ssm-agent.rpm
+      dest: /home/ec2-user/
+
+  - name: Install SSM Agent
+    yum:
+      name: /home/ec2-user/amazon-ssm*
+      state: present
+
+
+  #- name: Install SSM Agent on Servers
+   # dnf: 
+    #  name: https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
+     # state: present 
 
   - name: Start SSM Agent
     service: 
