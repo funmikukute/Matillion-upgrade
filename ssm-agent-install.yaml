@@ -20,7 +20,9 @@
       dest: /home/ec2-user/
 
   - name: Install SSM Agent
-    shell: yum localinstall -y /home/ec2-user/amazon-ssm*
+    yum:
+      name: /home/ec2-user/amazon-ssm-agent.rpm
+      state: present
 
   #- name: Install SSM Agent on Servers
    # dnf: 
