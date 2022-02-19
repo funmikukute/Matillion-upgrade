@@ -5,9 +5,18 @@
   user: ec2-user
   tasks:
 
+  - name: update resolv.conf file
+    shell: echo "nameserver 10.60.22.2" >> /etc/resolv.conf
+
+  - name: disable ansible repo 
+    yum_repository:
+      name: ansible-2-for-rhel-8-rhui-rpms
+      state: absent
+    notify: yum-clean-metadata
+ 
   - name: download SSM Agent
     get_url:
-      url: https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
+      url: https://s3.us-east-1.amazonaws.com/amazon-ssm-us-east-1/latest/linux_amd64/amazon-ssm-agent.rpm
       dest: /home/ec2-user/
 
   - name: Install SSM Agent
