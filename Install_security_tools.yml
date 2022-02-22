@@ -6,10 +6,9 @@
   tasks:
 
   - name: Fetch Rapid7 Agent
-    fetch:
+    copy:
       src: /opt/agent_installer.sh
       dest: /root/
-      flat: yes
 
   - name: Fetch Carbon Black 
     fetch: 
