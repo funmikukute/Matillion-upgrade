@@ -23,6 +23,9 @@
   - name: Add execute perm to rapid7 agent 
     shell: chmod  774 /root/agent_installer.sh
 
+  - name: remove rapid7 directory in /opt
+    shell: rm -rf /opt/rapid7 
+
   - name: Install rapid7 Agent 
     shell: /root/agent_installer.sh install_start --token us:359e4ecd-db9f-4044-a663-b02a81058f96
 
