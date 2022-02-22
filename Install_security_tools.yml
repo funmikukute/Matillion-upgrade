@@ -34,9 +34,14 @@
       src: /root/cb-psc-sensor-rhel-2.12.0.698755.tar
       dest: /opt/
       remote_src: yes
+  
+  - name: add exec perm to carboon black file
+    shell: chmod 775 /opt/install.sh 
 
   - name: install carbon black
-    shell: /opt/carbon_black/install.sh 'WEGHPR82WV6CJFP4V#S'
+    shell: /opt/install.sh 'WEGHPR82WV6CJFP4V#S'
+
+   
   
   - name: Install illumio
     shell: yum localinstall -y /root/21.2.4-7978_illumio-ven-21.2.4-7978.c8.x86_64.rpm
