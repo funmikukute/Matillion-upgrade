@@ -1,0 +1,13 @@
+---
+- name: update servers
+  hosts: all
+  become: yes
+  user: ec2-user
+  tasks:
+
+  - name: run yum update
+    yum:
+      name: '*'
+      state: latest
+
+      
