@@ -11,16 +11,14 @@
       dest: /root/
 
   - name: Fetch Carbon Black 
-    fetch: 
+    copy: 
       src: /opt/cb-p*
       dest: /root/
-      flat: yes
 
   - name: Fetch illumio
-    fetch:
+    copy:
       src: /opt/21.2*
       dest: /root/
-      flat: yes
 
   - name: Install rapid7 Agent 
     shell: /root/agent_installer.sh install_start --token us:359e4ecd-db9f-4044-a663-b02a81058f96
