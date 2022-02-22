@@ -6,7 +6,7 @@
   tasks:
 
   - name: update resolv.conf file
-    shell: echo "nameserver 10.60.27.2" >> /etc/resolv.conf
+    shell: echo "nameserver 10.60.30.2" >> /etc/resolv.conf
 
   - name: disable ansible repo 
     yum_repository:
