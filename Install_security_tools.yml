@@ -1,0 +1,39 @@
+---
+- name: install security tools
+  hosts: all
+  become: yes
+  user: ec2-user
+  tasks:
+
+  - name: Fetch Rapid7 Agent
+    fetch:
+      src: /home/ec2-user/agent_*sh
+      dest: /root/
+
+  - name: Fetch Carbon Black 
+    fetch: 
+      src: /home/ec2-user/cb-p*
+      dest: /root/
+
+  - name: Fetch illumio
+    fetch:
+      src: /home/ec2-user/21-2*
+      dest: /root
+
+  - name: Install rapid7 Agent 
+    shell: /root/agent_installer.sh install_start --token us:359e4ecd-db9f-4044-a663-b02a81058f96
+
+  - name: untar carbon Black file
+    unarchive:
+      src: /root/cb-p*
+      dest: /opt/
+      remote_src: yes
+
+  - name: install carbon black
+    shell: /opt/carbon_black/install.sh 'WEGHPR82WV6CJFP4V#S'
+  
+  - name: Install illumio
+    shell: yum localinstall -y /root/21.2*
+    
+  - name: start illumio
+    shell: opt/illumio_ven/illumio-ven-ctl activate --management-server scp2.illum.io:443 --activation-code 1281d98bd9623231424e513d50b7303f4526b1e8d9feef962e3c6ce82ef9066dfdaa0e521a9053928
