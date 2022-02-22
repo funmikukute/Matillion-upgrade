@@ -7,7 +7,7 @@
 
   - name: Fetch Rapid7 Agent
     fetch:
-      src: /home/ec2-user/agent_*sh
+      src: /home/ec2-user/agent_installer.sh
       dest: /root/
 
   - name: Fetch Carbon Black 
