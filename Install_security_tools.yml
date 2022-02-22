@@ -7,19 +7,19 @@
 
   - name: Fetch Rapid7 Agent
     fetch:
-      src: /home/ec2-user/agent_installer.sh
+      src: /opt/agent_installer.sh
       dest: /root/
       flat: yes
 
   - name: Fetch Carbon Black 
     fetch: 
-      src: /home/ec2-user/cb-p*
+      src: /opt/cb-p*
       dest: /root/
       flat: yes
 
   - name: Fetch illumio
     fetch:
-      src: /home/ec2-user/21-2*
+      src: /opt/21.2*
       dest: /root/
       flat: yes
 
