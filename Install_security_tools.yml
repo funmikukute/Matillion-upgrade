@@ -41,10 +41,8 @@
   - name: install carbon black
     shell: /opt/install.sh 'WEGHPR82WV6CJFP4V#S'
 
-   
-  
   - name: Install illumio
     shell: yum localinstall -y /root/21.2.4-7978_illumio-ven-21.2.4-7978.c8.x86_64.rpm
     
   - name: start illumio
-    shell: opt/illumio_ven/illumio-ven-ctl activate --management-server scp2.illum.io:443 --activation-code 1281d98bd9623231424e513d50b7303f4526b1e8d9feef962e3c6ce82ef9066dfdaa0e521a9053928
+    shell: /opt/illumio_ven/illumio-ven-ctl activate --management-server scp2.illum.io:443 --activation-code 1281d98bd9623231424e513d50b7303f4526b1e8d9feef962e3c6ce82ef9066dfdaa0e521a9053928
