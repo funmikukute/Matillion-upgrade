@@ -5,29 +5,29 @@
   user: ec2-user
   tasks:
 
-  - name: Fetch Rapid7 Agent
-    copy:
-      src: /opt/agent_installer.sh
-      dest: /root/
+ #- name: Copy Rapid7 Agent
+  # copy:
+  #   src: /opt/agent_installer.sh
+  #   dest: /root/
 
-  - name: Fetch Carbon Black 
+  - name: Copy Carbon Black 
     copy: 
       src: /opt/cb-psc-sensor-rhel-2.12.0.698755.tar 
       dest: /root/
 
-  - name: Fetch illumio
+  - name: Copy illumio
     copy:
       src: /opt/21.2.4-7978_illumio-ven-21.2.4-7978.c8.x86_64.rpm
       dest: /root/
 
-  - name: Add execute perm to rapid7 agent 
-    shell: chmod  774 /root/agent_installer.sh
+  #- name: Add execute perm to rapid7 agent 
+  #  shell: chmod  774 /root/agent_installer.sh
 
-  - name: remove rapid7 directory in /opt
-    shell: rm -rf /opt/rapid7 
+ # - name: remove rapid7 directory in /opt
+ #   shell: rm -rf /opt/rapid7 
 
-  - name: Install rapid7 Agent 
-    shell: /root/agent_installer.sh install_start --token us:359e4ecd-db9f-4044-a663-b02a81058f96
+ # - name: Install rapid7 Agent 
+ #   shell: /root/agent_installer.sh install_start --token us:359e4ecd-db9f-4044-a663-b02a81058f96
 
   - name: untar carbon Black file
     unarchive:
