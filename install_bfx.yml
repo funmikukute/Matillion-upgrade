@@ -21,4 +21,4 @@
       dest: /home/ec2-user/
 
   - name: Install bigfix
-    shell: yum locallinstall /home/ec2-user/BESRelay-10.0.5.50-rhe6.x86_64.rpm
+    shell: yum localinstall /home/ec2-user/BESRelay-10.0.5.50-rhe6.x86_64.rpm
