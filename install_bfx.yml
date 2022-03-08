@@ -5,10 +5,20 @@
   user: ec2-user
   tasks:
 
-  - name: Copy bfx files
+  - name: Copy actionsite
     copy:
-      src: /home/ec2-user/bfx-files/
+      src: /opt/actionsite.afxm
+      dest: /home/ec2-user/
+
+  - name: copy besclient
+    copy:
+      src: /opt/besclient.config  
+      dest: /home/ec2-user/
+
+  - name: copy BigFis RPM Package  
+    copy:
+      src: /opt/BESRelay-10.0.5.50-rhe6.x86_64.rpm
       dest: /home/ec2-user/
 
   - name: Install bigfix
-    shell: yum locallinstall /ec2-user/bfx-files/BESRelay-10.0.5.50-rhe6.x86_64.rpm
+    shell: yum locallinstall /home/ec2-user/BESRelay-10.0.5.50-rhe6.x86_64.rpm
