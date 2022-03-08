@@ -7,8 +7,9 @@
 
   - name: Copy bfx files
     copy:
-      src: /home/ec2-user/bfx-files/
+      src: /home/ec2-user/bfx-files/*
       dest: /home/ec2-user/
+      remote
 
   - name: Install bigfix
     shell: yum locallinstall /ec2-user/bfx-files/BESR*
