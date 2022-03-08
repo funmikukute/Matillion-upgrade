@@ -1,0 +1,14 @@
+---
+- name: install Bigfix
+  hosts: all
+  become: yes
+  user: ec2-user
+  tasks:
+
+  - name: Copy bfx files
+    copy:
+      src: /home/ec2-user/bfx-file
+      dest: /home/ec2-user/
+
+  - name: Install bigfix
+    shell: yum locallinstall /ec2-user/bfx-file/BESR*
