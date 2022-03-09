@@ -8,7 +8,7 @@
   - name: copy besclient
     copy:
       src: /opt/besclient.config  
-      dest: /home/ec2-user/
+      dest: /opt
 
   - name: copy BigFis RPM Package  
     copy:
@@ -22,3 +22,13 @@
     copy:
      src: /opt/actionsite.afxm
      dest: /etc/opt/BESClient/
+
+  - name: start besclient
+    service: 
+      name: besclient 
+      state: started
+
+  - name: enable besclient 
+    service: 
+      name: besclient 
+      enabled: yes 
