@@ -5,11 +5,6 @@
   user: ec2-user
   tasks:
 
-  - name: Copy actionsite
-    copy:
-      src: /opt/actionsite.afxm
-      dest: /home/ec2-user/
-
   - name: copy besclient
     copy:
       src: /opt/besclient.config  
@@ -22,3 +17,8 @@
 
   - name: Install bigfix
     shell: yum localinstall -y /home/ec2-user/BESAgent-10.0.5.50-rhe6.x86_64.rpm 
+
+  - name: Copy actionsite
+    copy:
+     src: /opt/actionsite.afxm
+     dest: /etc/opt/BESClient/
