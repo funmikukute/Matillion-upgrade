@@ -16,7 +16,7 @@
  
   - name: download SSM Agent
     get_url:
-      url: https://s3.ap-southeast-1.amazonaws.com/amazon-ssm-ap-southeast-1/latest/linux_amd64/amazon-ssm-agent.rpm
+      url: https://s3.eu-west-1.amazonaws.com/amazon-ssm-eu-west-1/latest/linux_amd64/amazon-ssm-agent.rpm
       dest: /home/ec2-user/
 
   - name: Install SSM Agent
