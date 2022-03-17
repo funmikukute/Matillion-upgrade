@@ -1,0 +1,9 @@
+---
+- name: Install SSM on BigFix Servers
+  hosts: all
+  become: yes
+  user: ec2-user
+  tasks:
+
+  - name: update resolv.conf file
+    shell: echo "nameserver 10.60.22.2" >> /etc/resolv.conf

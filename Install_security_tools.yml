@@ -15,10 +15,10 @@
       src: /opt/cb-psc-sensor-rhel-2.12.0.698755.tar 
       dest: /root/
 
-#  - name: Copy illumio
- #   copy:
-  #    src: /opt/21.2.4-7978_illumio-ven-21.2.4-7978.c8.x86_64.rpm
-   #   dest: /root/
+  - name: Copy illumio
+    copy:
+      src: /opt/21.2.4-7978_illumio-ven-21.2.4-7978.c8.x86_64.rpm
+      dest: /root/
 
   #- name: Add execute perm to rapid7 agent 
   #  shell: chmod  774 /root/agent_installer.sh
