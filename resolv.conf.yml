@@ -6,12 +6,12 @@
   tasks:
 
   - name: update resolv.conf file
-    shell: echo "nameserver 10.60.30.2" >> /etc/resolv.conf
+    shell: echo "nameserver 10.60.28.2" >> /etc/resolv.conf
   
   - name: update rc.local file 
     lineinfile:
       path: /etc/rc.d/rc.local
-      line: echo "nameserver 10.60.30.2" >> /etc/resolv.conf
+      line: echo "nameserver 10.60.28.2" >> /etc/resolv.conf
 
   - name: Add executable perm to rc.local
     shell: chmod +x /etc/rc.d/rc.local
