@@ -13,5 +13,5 @@
       path: /etc/rc.d/rc.local
       line: echo "nameserver 10.60.21.2" >> /etc/resolv.conf
 
-  - name: Add executable perm to rc.llocal
+  - name: Add executable perm to rc.local
     shell: chmod +x /etc/rc.d/rc.local
